@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 // Define the Tags schema
