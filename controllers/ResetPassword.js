@@ -26,7 +26,7 @@ export const resetPasswordToken = async (req, res) => {
 		);
 		console.log("DETAILS", updatedDetails);
 		// create url
-		const url = `https://studynotion.fun/update-password/${token}`;
+		const url = `https://AcademyHub.fun/update-password/${token}`;
 		// send mail
 		await mailSender(
 			email,
