@@ -208,6 +208,11 @@ exports.getCourseDetails = async (req,res)=>{
 }
 
 
+// ------------------------------------------//
+// ------------------------------------------//
+// ------------------------------------------//
+
+
 
 // Function to get all courses of a particular instructor
 exports.getInstructorCourses = async (req, res) => {
