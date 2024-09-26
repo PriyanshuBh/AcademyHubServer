@@ -3,7 +3,7 @@ const Course = require("../models/Course");
 const { default: mongoose } = require("mongoose");
 
 
-exports.createRating = async (req,res)=>{
+export const reateRating = async (req,res)=>{
   try {
     const userId=req.user.id;
     const {rating, review,courseId} = req.body;
@@ -29,7 +29,8 @@ exports.createRating = async (req,res)=>{
              {
              $push:{
              ratingAndReviews: ratingReview._id
-         }});
+         }},{new: true}
+        );
  
  
      res.status(200).json({
@@ -44,19 +45,19 @@ exports.createRating = async (req,res)=>{
 }
 
 
+// ---------------------------------------//
+// ---------------------------------------//
+// ---------------------------------------//
 
 
-
-
-
-
-exports.getAverageRating = async (res,req)=>{
+export const getAverageRating = async (res,req)=>{
     try {
         const courseId=req.body.courseId;
         const result= await RatingAndReview.aggregate([
             {
                 $match:{
                     course:new mongoose.Types.ObjectId(courseId),
+                    // course id is a string we convert it into object id
                 }
             },
             {
@@ -89,7 +90,7 @@ exports.getAverageRating = async (res,req)=>{
 
 
 
-exports.getAllRating = async (req,res) => {
+export const getAllRating = async (req,res) => {
     //get sorted by rating
     try {
         const allReviews = await RatingAndReview.find(
