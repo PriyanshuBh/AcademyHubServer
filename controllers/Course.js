@@ -10,7 +10,7 @@ const SubSection = require("../models/SubSection");
 
 
 // Function to create a new course
-export const createCourse = async (req, res) => {
+exports.createCourse = async (req, res) => {
 	try {
 		// Get user ID from request object
 		const userId = req.user.id;
@@ -131,7 +131,7 @@ export const createCourse = async (req, res) => {
 // ------------------------------------------//
 // ------------------------------------------//
 
-export const getAllCourses = async (req, res) => {
+exports.getAllCourses = async (req, res) => {
 	try {
 		const allCourses = await Course.find(
 			{},

@@ -1,7 +1,7 @@
 const Section = require("../models/Section");
 const Course = require("../models/Course");
 // CREATE a new section
-export const createSection = async (req, res) => {
+exports.createSection = async (req, res) => {
 	try {
 		// Extract the required properties from the request body
 		const { sectionName, courseId } = req.body;

@@ -10,7 +10,7 @@ require("dotenv").config();
 
 
 // Send OTP For Email Verification
-export const sendotp = async (req, res) => {
+exports.sendotp = async (req, res) => {
 	try {
 		const { email } = req.body;
 
@@ -74,7 +74,7 @@ export const sendotp = async (req, res) => {
 
 // Signup Controller for Registering USers
 
-export const signup = async (req, res) => {
+exports.signup = async (req, res) => {
 	try {
 		// Destructure fields from the request body
 		const {
@@ -182,7 +182,7 @@ export const signup = async (req, res) => {
 
 
 // Login controller for authenticating users
-export const login = async (req, res) => {
+exports.login = async (req, res) => {
 	try {
 		// Get email and password from request body
 		const { email, password } = req.body;
@@ -254,7 +254,7 @@ export const login = async (req, res) => {
 // -----------------------------------------//
 
 // Controller for Changing Password
-export const changePassword = async (req, res) => {
+exports.changePassword = async (req, res) => {
 	try {
 		// Get user data from req.user
 		const userDetails = await User.findById(req.user.id);

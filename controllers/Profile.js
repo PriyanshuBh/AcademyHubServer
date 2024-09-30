@@ -144,7 +144,7 @@ exports.updateDisplayPicture = async (req, res) => {
             message: "User not found",
         });
 	}
-	const image = req.files.pfp;
+	const image = req.files.displayPicture;
 	if (!image) {
 		return res.status(404).json({
             success: false,

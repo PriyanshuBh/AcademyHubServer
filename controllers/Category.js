@@ -1,7 +1,7 @@
 const Category = require("../models/Category");
 const Course = require("../models/Course");
 
-export const createCategory = async (req, res) => {
+exports.createCategory = async (req, res) => {
 	try {
 		const { name, description } = req.body;
 		if (!name || !description) {
@@ -29,7 +29,7 @@ export const createCategory = async (req, res) => {
 };
 //  get all tags   
 
-export const showAllCategories = async (req, res) => {
+exports.showAllCategories = async (req, res) => {
 	try {
 		const allCategorys = await Category.find(
 			{},
@@ -48,7 +48,7 @@ export const showAllCategories = async (req, res) => {
 };
 
 // 
-export const categoryPageDetails = async (req, res) => {
+exports.categoryPageDetails = async (req, res) => {
 	try {
 		const { categoryId } = req.body;
 
@@ -107,7 +107,7 @@ export const categoryPageDetails = async (req, res) => {
 };
 
 //add course to category
-export const addCourseToCategory = async (req, res) => {
+exports.addCourseToCategory = async (req, res) => {
 	const { courseId, categoryId } = req.body;
 	// console.log("category id", categoryId);
 	try {

@@ -9,7 +9,7 @@ const crypto = require("crypto");
 const CourseProgress = require("../models/CourseProgress");
 
 
-export const capturePayment = async (req, res) => {
+exports.capturePayment = async (req, res) => {
     //get courseId and UserID
     const {courses} = req.body;
     const userId = req.user.id;

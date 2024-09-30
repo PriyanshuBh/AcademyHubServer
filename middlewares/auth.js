@@ -3,7 +3,7 @@ require("dotenv").config()
 const User = require("../models/User")
 
 //auth
-export const auth = async (req, res, next) => {
+exports.auth = async (req, res, next) => {
   try {
     //extract token
     const token =
@@ -41,7 +41,7 @@ export const auth = async (req, res, next) => {
 }
 
 //isStudent
-export const isStudent = async (req, res, next) => {
+exports.isStudent = async (req, res, next) => {
   try {
     if (req.user.accountType !== "Student") {
       return res.status(401).json({
@@ -59,7 +59,7 @@ export const isStudent = async (req, res, next) => {
 }
 
 //isInstructor
-export const isInstructor = async (req, res, next) => {
+exports.isInstructor = async (req, res, next) => {
   try {
     if (req.user.accountType !== "Instructor") {
       return res.status(401).json({
@@ -77,7 +77,7 @@ export const isInstructor = async (req, res, next) => {
 }
 
 //isAdmin
-export const isAdmin = async (req, res, next) => {
+exports.isAdmin = async (req, res, next) => {
   try {
     if (req.user.accountType !== "Admin") {
       return res.status(401).json({
