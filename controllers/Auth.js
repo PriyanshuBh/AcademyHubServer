@@ -77,6 +77,7 @@ exports.sendotp = async (req, res) => {
 exports.signup = async (req, res) => {
 	try {
 		// Destructure fields from the request body
+	
 		const {
 			firstName,
 			lastName,
@@ -88,6 +89,16 @@ exports.signup = async (req, res) => {
 			otp,
 		} = req.body;
 		// Check if All Details are there or not
+		console.log("in auth singup in server req.body data")
+		console.log(firstName,
+			lastName,
+			email,
+			password,
+			confirmPassword,
+			accountType,
+			otp,)
+
+		
 		if (
 			!firstName ||
 			!lastName ||
@@ -102,6 +113,8 @@ exports.signup = async (req, res) => {
 			});
 		}
 		// Check if password and confirm password match
+		console.log("in auth singup in server req.body datacheck")
+
 		if (password !== confirmPassword) {
 			return res.status(400).json({
 				success: false,
@@ -214,7 +227,7 @@ exports.login = async (req, res) => {
 				{ email: user.email, id: user._id, accountType: user.accountType },
 				process.env.JWT_SECRET,
 				{
-					expiresIn: "24h",
+					expiresIn: "7d",
 				}
 			);
 
@@ -223,7 +236,7 @@ exports.login = async (req, res) => {
 			user.password = undefined;
 			// Set cookie for token and return success response
 			const options = {
-				expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+				expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
 				httpOnly: true,
 			};
 			res.cookie("token", token, options).status(200).json({
