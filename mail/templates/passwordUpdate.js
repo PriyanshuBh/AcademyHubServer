@@ -55,7 +55,7 @@ exports.passwordUpdated = (email, name) => {
     
     <body>
         <div class="container">
-            <a href="https://AcademyHub-edtech-project.vercel.app"><img class="logo"
+            <a href="https://academyhub-pb.vercel.app"><img class="logo"
                     src="https://i.ibb.co/7Xyj3PC/logo.png" alt="AcademyHub Logo"></a>
             <div class="message">Password Update Confirmation</div>
             <div class="body">
@@ -66,7 +66,7 @@ exports.passwordUpdated = (email, name) => {
             </div>
             <div class="support">If you have any questions or need further assistance, please feel free to reach out to us
                 at
-                <a href="mailto:info@AcademyHub.com">info@AcademyHub.com</a>. We are here to help!
+                <a href="mailto:info@academyhub.com">info@academyhub.com</a>. We are here to help!
             </div>
         </div>
     </body>

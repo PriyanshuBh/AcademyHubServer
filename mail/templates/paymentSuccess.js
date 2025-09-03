@@ -67,7 +67,7 @@ exports.paymentSuccess = (amount, paymentId, orderId, name,lastname) => {
     
     <body>
         <div class="container">
-            <a href="https://AcademyHub-edtech-project.vercel.app"><img class="logo" src="https://i.ibb.co/7Xyj3PC/logo.png"
+            <a href="https://academyhub-pb.vercel.app"><img class="logo" src="https://i.ibb.co/7Xyj3PC/logo.png"
                     alt="AcademyHub Logo"></a>
             <div class="message">
             Your payment of ₹${amount} has been successfully received.
@@ -83,7 +83,7 @@ exports.paymentSuccess = (amount, paymentId, orderId, name,lastname) => {
                 </p>
             </div>
             <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-                    href="mailto:info@AcademyHub.com">info@AcademyHub.com</a>. We are here to help!</div>
+                    href="mailto:info@academyhub.com">info@academyhub.com</a>. We are here to help!</div>
         </div>
     </body>
     
