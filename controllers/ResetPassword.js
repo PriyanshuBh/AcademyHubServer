@@ -26,7 +26,7 @@ exports.resetPasswordToken = async (req, res) => {
 		);
 		console.log("DETAILS", updatedDetails);
 		// create url
-		const url = `https://AcademyHub.fun/update-password/${token}`;
+		const url = `https://academyhub-pb.vercel.app/update-password/${token}`;
 		// send mail
 		await mailSender(
 			email,
@@ -58,7 +58,11 @@ exports.resetPassword = async (req, res) => {
 				message: "Password and Confirm Password Does not Match",
 			});
 		}
-		const userDetails = await User.findOne({ token: token });
+		
+		const usertoken = token.id;
+		
+		console.log("Token", usertoken);
+		const userDetails = await User.findOne({ token: usertoken});
 		if (!userDetails) {
 			return res.json({
 				success: false,                                          
@@ -75,7 +79,7 @@ exports.resetPassword = async (req, res) => {
 		const encryptedPassword = await bcrypt.hash(password, 10);
 		
 		await User.findOneAndUpdate(
-			{ token: token },
+			{ token: usertoken },
 			{ password: encryptedPassword },
 			{ new: true }
 		);
